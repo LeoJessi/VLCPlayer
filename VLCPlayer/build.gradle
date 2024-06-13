@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/gradle/publish.gradle"
+
+android {
+    namespace = "top.jessi.vlcplayer"
+    compileSdk = 34
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+        minSdk = 21
+        targetSdk = 34
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+}
+
+dependencies {
+//    api fileTree(dir: '../libs', include: ['*.jar'])
+//    api fileTree(dir: '../libs', include: ['*.aar'])
+
+    api 'org.videolan.android:libvlc-all:3.6.0-eap12'
+}

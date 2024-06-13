@@ -1,0 +1,137 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <top.jessi.vlc_simple.view.FrameLayoutScale
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:background="#20000000"
+        android:layout_height="match_parent">
+
+        <top.jessi.vlcplayer.VlcVideoView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </top.jessi.vlc_simple.view.FrameLayoutScale>
+
+    <top.jessi.vlc_simple.view.FrameLayoutScale
+        android:id="@+id/layout2"
+        android:background="#30000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp">
+
+    </top.jessi.vlc_simple.view.FrameLayoutScale>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/change"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="changeFull"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/changeSlave"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="字幕切换"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/recordStart"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="recordstart" />
+
+        <TextView
+            android:id="@+id/recordStop"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="recordstop" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/snapShot"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="snapshot" />
+        <TextView
+            android:id="@+id/change_Parent"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="change_Parent" />
+        <TextView
+            android:id="@+id/test1"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="test1" />
+        <TextView
+            android:id="@+id/test2"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="#cccccccc"
+            android:gravity="center"
+            android:text="test2" />
+
+        <top.jessi.vlc_simple.view.FrameLayoutScale
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+        </top.jessi.vlc_simple.view.FrameLayoutScale>
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="testDemo"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+</FrameLayout>
