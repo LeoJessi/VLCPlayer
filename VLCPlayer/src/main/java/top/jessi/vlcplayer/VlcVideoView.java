@@ -15,6 +15,8 @@ import org.videolan.libvlc.MediaPlayer;
 import org.videolan.libvlc.interfaces.ILibVLC;
 import org.videolan.libvlc.interfaces.IMedia;
 
+import java.util.List;
+
 import top.jessi.vlcplayer.listener.MediaListenerEvent;
 import top.jessi.vlcplayer.listener.MediaPlayerControl;
 import top.jessi.vlcplayer.listener.VideoSizeChange;
@@ -389,6 +391,10 @@ public class VlcVideoView extends TextureView implements MediaPlayerControl, Vid
 
     public void setMute() {
         videoMediaLogic.setMute();
+    }
+
+    public void addOption(List<String> list) {
+        videoMediaLogic.addOption(list);
     }
 
 }
