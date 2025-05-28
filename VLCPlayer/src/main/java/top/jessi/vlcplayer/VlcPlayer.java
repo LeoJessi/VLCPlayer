@@ -647,4 +647,11 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
         }
     }
 
+    public void setVolume(float leftVolume, float rightVolume) {
+        mMediaPlayer.setVolume((int) ((leftVolume + rightVolume) * 100 / 2));
+    }
+
+    public void setMute() {
+        mMediaPlayer.setVolume(0);
+    }
 }

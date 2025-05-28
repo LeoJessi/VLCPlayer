@@ -383,4 +383,12 @@ public class VlcVideoView extends TextureView implements MediaPlayerControl, Vid
         }
     };
 
+    private MediaPlayer geMediaPlayer() {
+        return videoMediaLogic.getMediaPlayer();
+    }
+
+    public void setMute() {
+        videoMediaLogic.setMute();
+    }
+
 }
