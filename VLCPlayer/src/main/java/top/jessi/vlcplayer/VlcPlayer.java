@@ -14,6 +14,9 @@ import org.videolan.libvlc.MediaPlayer;
 import org.videolan.libvlc.interfaces.IMedia;
 import org.videolan.libvlc.interfaces.IVLCVout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import top.jessi.vlcplayer.listener.MediaListenerEvent;
 import top.jessi.vlcplayer.listener.MediaPlayerControl;
 import top.jessi.vlcplayer.listener.VideoSizeChange;
@@ -74,6 +77,7 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
     private Surface surfaceVideo;// 视频画布
     private int surfaceW, surfaceH;
     private String path;
+    private List<String> optionList = new ArrayList<>();
     private LibVLC libVLC;
 
     private boolean loadOtherMedia;
@@ -287,6 +291,11 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
             media = new Media(libVLC, Uri.parse(path));
         } else {
             media = new Media(libVLC, path);
+        }
+        if (!optionList.isEmpty()) {
+            for (int i = 0, len = optionList.size(); i < len; i++) {
+                media.addOption(optionList.get(i));
+            }
         }
         media.setHWDecoderEnabled(HWDecoderEnable, false);
         media.setEventListener(mMediaListener);
@@ -653,5 +662,10 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
 
     public void setMute() {
         mMediaPlayer.setVolume(0);
+    }
+
+
+    public void addOption(List<String> list) {
+        this.optionList = list;
     }
 }

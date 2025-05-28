@@ -29,11 +29,13 @@ import top.jessi.vlcplayer.listener.util.VLCInstance;
 
 public class MainActivity extends AppCompatActivity {
     public static final String path = "http://tv.ghostplay.in:8880/series/heredf287994061082/2879940610822545/830.mp4";
+    public static final String path2 = "http://tv.ghostplay.in:8880/series/heredf287994061082/2879940610822545/831.mp4";
 
     private final String tag = "MainActivity";
     public static boolean testNetWork = false;
 
     private VlcVideoView mVideoView;
+    private VlcVideoView player;
 
     public static String getUrl(Context context) {
         if (testNetWork) {
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         mVideoView = findViewById(R.id.jessiPlayer);
         mVideoView.setPath(path);
         mVideoView.startPlay();
+
+        player = findViewById(R.id.player);
+        player.setPath(path2);
+        player.startPlay();
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             mVideoView.onVideoSizeChanged(100, 60, 300, 225);
