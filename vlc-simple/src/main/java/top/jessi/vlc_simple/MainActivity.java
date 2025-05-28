@@ -3,11 +3,13 @@ package top.jessi.vlc_simple;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,6 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import org.videolan.libvlc.media.MediaPlayer;
+
+import java.io.IOException;
 import java.util.Arrays;
 
 import top.jessi.vlc_simple.vlc.VlcPlayerActivity;
@@ -50,8 +55,9 @@ public class MainActivity extends AppCompatActivity {
         mVideoView.startPlay();
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            mVideoView.onVideoSizeChanged(100, 60, 300, 60);
+            mVideoView.onVideoSizeChanged(100, 60, 300, 225);
         }, 10000);
+
     }
 
     private void init() {

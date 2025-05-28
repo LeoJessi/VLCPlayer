@@ -5,12 +5,14 @@ import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Surface;
 import android.view.TextureView;
 
 import org.videolan.libvlc.LibVLC;
 import org.videolan.libvlc.Media;
 import org.videolan.libvlc.MediaPlayer;
+import org.videolan.libvlc.interfaces.ILibVLC;
 import org.videolan.libvlc.interfaces.IMedia;
 
 import top.jessi.vlcplayer.listener.MediaListenerEvent;
@@ -135,7 +137,6 @@ public class VlcVideoView extends TextureView implements MediaPlayerControl, Vid
     public boolean isPlaying() {
         return videoMediaLogic.isPlaying();
     }
-
 
     @Override
     public void setMirror(boolean mirror) {
@@ -367,6 +368,7 @@ public class VlcVideoView extends TextureView implements MediaPlayerControl, Vid
         @Override
         public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
             videoMediaLogic.setWindowSize(width, height);
+            Log.e("TAG", "onSurfaceTextureSizeChanged: ~~~~~~~~~~~~~~~~~~~" );
         }
 
         @Override

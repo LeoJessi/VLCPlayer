@@ -23,5 +23,6 @@
     <top.jessi.vlcplayer.VlcVideoView
         android:id="@+id/jessiPlayer"
         android:layout_width="300dp"
-        android:layout_height="200dp" />
+        android:layout_height="168.75dp" />
+
 </LinearLayout>

@@ -131,7 +131,6 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
         }
     }
 
-
     public void setWindowSize(int surfaceW, int surfaceH) {
         this.surfaceW = surfaceW;
         this.surfaceH = surfaceH;
@@ -305,6 +304,14 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
                     break;
                 case Media.Event.ParsedChanged:
                     LogUtils.i(tag, "Media.Event.ParsedChanged  =" + event.getMetaId());
+
+                    Media.VideoTrack track = mMediaPlayer.getCurrentVideoTrack();
+                    LogUtils.i(tag, "Media.Event.MetaChanged:  =" + event.getMetaId() + " ~~ " + track);
+                    if (track != null) {
+                        if (track.width > 0 && track.height > 0) {
+                            LogUtils.i(tag, "Media.Event.MetaChanged:~~~~  =" + track.width + " ~~ " + track.height);
+                        }
+                    }
                     break;
                 case Media.Event.StateChanged:
                     LogUtils.i(tag, "StateChanged   =" + event.getMetaId());

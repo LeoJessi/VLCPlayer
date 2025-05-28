@@ -204,7 +204,8 @@ public class VlcVideoFragment extends Fragment implements View.OnClickListener {
                     // Screen.saveScreenShot(getActivity(),takeSnapshotFile.getAbsolutePath());
 
 
-                    // recordEvent.takeSnapshot(vlcVideoView.getMediaPlayer(), takeSnapshotFile.getAbsolutePath(), 0, 0);
+                    // recordEvent.takeSnapshot(vlcVideoView.getMediaPlayer(), takeSnapshotFile.getAbsolutePath(), 0,
+                    // 0);
                     // 原图的一半
                     //    recordEvent.takeSnapshot(vlcVideoView.getMediaPlayer(), takeSnapshotFile.getAbsolutePath(),
                     //    videoTrack.width / 2, 0);
